@@ -1,0 +1,54 @@
+# change log 
+# v 0.1 
+
+# for flashing : press boot button for 2-3 seconds before the serial connection initialize
+# After OTA update, the EN (reset) button must be pressed to run firmware
+# do not use gpio12 (MTDI)
+
+########################################################################
+### Notes on motor speed :  
+### The speed of motor cannot be controlled
+### Passing PWM trough SN74HC595 component can be done, but it will apply PWM for all outputs
+### In the current board, the OE pin of the SN74HC595 component is physically linked to GND. 
+### Perhaps next release could link OE pin to an ESP output pin with PWM
+########################################################################
+
+
+substitutions:
+  name: test
+  friendly_name: "DC motor controller"
+  #must only consist of lowercase characters, the underscorecharacter and numbers. The character '#' cannot be used.
+
+  
+  TZ: "Europe/Zurich" #timezone
+  
+  # NOT recommended to change
+  #all chars exept $
+  ch1_cover_name: CH1
+  ch2_cover_name: CH2
+  ch3_cover_name: CH3
+  ch4_cover_name: CH4
+  ch5_cover_name: CH5
+  ch6_cover_name: CH6
+  ch7_cover_name: CH7
+  ch8_cover_name: CH8 
+ 
+
+
+packages:
+  wifi: !include wifi.yaml
+  #hbridge: !include hbridge.yaml
+  covers: !include covers.yaml
+  board: !include board.yaml
+  time: !include time.yaml
+  switch_gpio: !include switch_gpio.yaml
+  switch_others: !include switch_others.yaml
+  inputs: !include inputs.yaml
+  sensor_bemf: !include sensor_bemf.yaml #back electromotive force (back EMF)
+  sensor_adc: !include sensor_adc.yaml
+  sensor_others: !include sensor_others.yaml
+  
+    
+web_server:
+  port: 80    
+

@@ -1,0 +1,11 @@
+#https://esphome.io/components/fan/hbridge.html
+
+fan:
+  - platform: hbridge
+    id: CH1_fan
+    name: ${ch1_motor_name}
+    pin_a: CH1_IA_pin
+    pin_b: CH1_IB_pin
+    # enable_pin: motor_enable
+    decay_mode: slow   # slow decay mode (braking) or fast decay (coasting).
+    # speed_count : 100

@@ -1,0 +1,52 @@
+### back electromotive force (back EMF)
+### https://en.wikipedia.org/wiki/Counter-electromotive_force
+
+
+binary_sensor:
+  - platform: template
+    id: BEMF_1_sensor
+    name: "BEMF CH1 sensor"
+    lambda: return ((id(BEMF_1_2_sensor_ADC).state >= id(bemf_trigger_1).state));
+
+
+  - platform: template
+    id: BEMF_2_sensor
+    name: "BEMF CH2 sensor"
+    lambda: return ((id(BEMF_1_2_sensor_ADC).state >= id(bemf_trigger_2).state));
+
+  - platform: template
+    id: BEMF_3_sensor
+    name: "BEMF CH3 sensor"
+    lambda: return ((id(BEMF_3_4_sensor_ADC).state >= id(bemf_trigger_3).state));
+
+  - platform: template
+    id: BEMF_4_sensor
+    name: "BEMF CH4 sensor"
+    lambda: return ((id(BEMF_3_4_sensor_ADC).state >= id(bemf_trigger_4).state));
+
+
+  - platform: template
+    id: BEMF_5_sensor
+    name: "BEMF CH5 sensor"
+    lambda: return ((id(BEMF_5_6_sensor_ADC).state >= id(bemf_trigger_5).state));
+
+
+  - platform: template
+    id: BEMF_6_sensor
+    name: "BEMF CH6 sensor"
+    lambda: return ((id(BEMF_5_6_sensor_ADC).state >= id(bemf_trigger_6).state));
+
+
+
+  - platform: template
+    id: BEMF_7_sensor
+    name: "BEMF CH7 sensor"
+    lambda: return ((id(BEMF_7_8_sensor_ADC).state >= id(bemf_trigger_7).state));
+
+
+
+  - platform: template
+    id: BEMF_8_sensor
+    name: "BEMF CH8 sensor"
+    lambda: return ((id(BEMF_7_8_sensor_ADC).state >= id(bemf_trigger_8).state));
+

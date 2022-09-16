@@ -1,0 +1,3 @@
+https://esphome.io/components/fan/hbridge.html
+
+Unlink SN74HC595 OE pin from GND and link it to an ESP32 pin with PWM capabilities
